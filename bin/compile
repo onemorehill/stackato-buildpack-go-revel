@@ -99,7 +99,7 @@ then
     echo >&2 `godep go get -tags heroku ./...`
 else
     echo "-----> Running: go get -tags heroku ./..."
-    echo >&2 "Here we go " go get -tags heroku ./...
+    go get -tags heroku ./...
 fi
 
 mkdir -p $build/bin
@@ -118,3 +118,5 @@ go get github.com/revel/cmd/revel
 echo >&2 "++++++++++++++++++ This is the end and this is PATH: $PATH"
 echo >&2 "++++++++++++++++++ And now we are here: " `pwd`
 echo >&2 "++++++++++++++++++ And the contents of the dir is: " `ls`
+echo >&2 "++++++++++++++++++ This is the top level: " `ls /`
+echo >&2 "++++++++++++++++++ This is the next level: " `ls /staging/`
