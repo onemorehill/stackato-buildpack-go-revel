@@ -66,6 +66,7 @@ GOPATH=$build/.go export GOPATH
 PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 echo >&2 "============ This is the GOPATH: $GOPATH and this is the GOROOT: $GOROOT"
+echo >&2 "============ The build is: " $build
 
 
 if ! (which hg > /dev/null && which bzr > /dev/null)
@@ -98,7 +99,7 @@ then
     echo >&2 `godep go get -tags heroku ./...`
 else
     echo "-----> Running: go get -tags heroku ./..."
-    echo >&2 `go get -tags heroku ./...`
+    echo >&2 "Here we go " go get -tags heroku ./...
 fi
 
 mkdir -p $build/bin
