@@ -115,4 +115,5 @@ echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
 go get github.com/revel/cmd/revel
 
 echo >&2 "++++++++++++++++++ This is the end and this is PATH: $PATH"
-echo >&2 "++++++++++++++++++ And now we are here: " + `pwd`
+echo >&2 "++++++++++++++++++ And now we are here: " `pwd`
+echo >&2 "++++++++++++++++++ And the contents of the dir is: " `ls -ahl`
