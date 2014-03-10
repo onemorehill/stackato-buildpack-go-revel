@@ -61,7 +61,7 @@ else
     echo " done"
 fi
 
-cp -R $cache/go-$ver/go $build/.goroot
+cp -R $cache/go-$ver/go $build/goroot
 
 GOROOT=$build/goroot export GOROOT
 GOPATH=$build/go export GOPATH
