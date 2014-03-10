@@ -95,10 +95,10 @@ cd $p
 if test -f $build/Godeps
 then
     echo "-----> Running: godep go get -tags heroku ./..."
-    godep go get -tags heroku ./...
+    echo >&2 `godep go get -tags heroku ./...`
 else
     echo "-----> Running: go get -tags heroku ./..."
-    go get -tags heroku ./... >&2
+    echo >&2 `go get -tags heroku ./...`
 fi
 
 mkdir -p $build/bin
