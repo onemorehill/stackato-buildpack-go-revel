@@ -22,6 +22,8 @@ mkdir -p $cache/pip
 python=python2.7
 PATH=$buildpack/$plat/bin:$venv/bin:$PATH
 
+# For debug purpose on stackato !!!!REMOVE ME LATER
+echo >&2 " ****** The values given are $1 and $2"
 virtualenv() {
     python "$buildpack/vendor/virtualenv-1.7/virtualenv.py" "$@"
 }
