@@ -7,7 +7,7 @@ mkdir -p "$1" "$2"
 build=$(cd "$1/" && pwd)
 root_dir=$(cd "$1/../" && pwd)
 cache=$(cd "$2/" && pwd)
-ver=${GOVERSION:-1.1.2}
+ver=${GOVERSION:-1.2.1}
 file=${GOFILE:-go$ver.$(uname|tr A-Z a-z)-amd64.tar.gz}
 url=${GOURL:-http://go.googlecode.com/files/$file}
 buildpack=$(dirname $(dirname $0))
@@ -113,9 +113,9 @@ fi
 rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
-echo 'export GOPATH=/app/app/.go' >> $build/.profile.d/set_gopath.sh
+echo 'export GOPATH=/app/app/.go' >> $build/../.profile
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
-echo >&2 "This is the profile.d/set_gopath.sh: " `cat $build/.profile.d/set_gopath.sh`
+echo >&2 "This is the .profile: " `cat $build/../.profile`
 
 go get github.com/revel/cmd/revel
 
