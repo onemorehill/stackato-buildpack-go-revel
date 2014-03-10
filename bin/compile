@@ -113,9 +113,8 @@ fi
 rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
-echo 'export GOPATH=/app/app/.go' >> $build/../.profile
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
-echo >&2 "This is the .profile: " `cat $build/../.profile`
+echo 'export GOPATH=/app/app/.go' >> $build/.profile.d/go.sh
 
 go get github.com/revel/cmd/revel
 
