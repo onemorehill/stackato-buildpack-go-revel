@@ -123,6 +123,7 @@ GOROOT=/app/app/.goroot export GOROOT
 
 echo >&2 "++++++++++++++++++ This is the end and this is PATH: $PATH"
 echo >&2 "++++++++++++++++++ And now we are here: " `pwd`
-echo >&2 "++++++++++++++++++ And the contents of the dir is: " `ls`
+echo >&2 "++++++++++++++++++ And the contents of the pwd dir is: " `ls`
+echo >&2 "++++++++++++++++++ The contents of the GOROOT dir is: " `ls $GOROOT/`
 echo >&2 "++++++++++++++++++ This is the top level: " `ls /`
 echo >&2 "++++++++++++++++++ This is the next level: " `ls /staging/`
