@@ -65,7 +65,7 @@ GOROOT=$build/.goroot export GOROOT
 GOPATH=$build/.go export GOPATH
 PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-echo >&2 "=============== This is the GOPATH: $GOPATH and this is the GOROOT: $GOROOT"
+echo >&2 "============ This is the GOPATH: $GOPATH and this is the GOROOT: $GOROOT"
 
 
 if ! (which hg > /dev/null && which bzr > /dev/null)
@@ -87,6 +87,8 @@ fi
 p=$GOPATH/src/$name
 mkdir -p $p
 cp -R $build/* $p
+
+echo >&2 "************** This is the name: $name"
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 cd $p
