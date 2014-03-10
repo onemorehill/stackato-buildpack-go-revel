@@ -63,8 +63,8 @@ fi
 
 cp -R $cache/go-$ver/go $build/.goroot
 
-GOROOT=$build/.goroot export GOROOT
-GOPATH=$build/.go export GOPATH
+GOROOT=$build/goroot export GOROOT
+GOPATH=$build/go export GOPATH
 PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 echo >&2 "============ This is the GOPATH: $GOPATH and this is the GOROOT: $GOROOT"
