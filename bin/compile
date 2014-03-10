@@ -5,7 +5,6 @@ set -eo pipefail
 
 mkdir -p "$1" "$2"
 build=$(cd "$1/" && pwd)
-root_dir=$(cd "$1/../" && pwd)
 cache=$(cd "$2/" && pwd)
 ver=${GOVERSION:-1.2.1}
 file=${GOFILE:-go$ver.$(uname|tr A-Z a-z)-amd64.tar.gz}
@@ -24,7 +23,6 @@ python=python2.7
 PATH=$buildpack/$plat/bin:$venv/bin:$PATH
 
 # For debug purpose on stackato !!!!REMOVE ME LATER
-echo >&2 " ++++++ This is the root of the build: $root_dir" 
 echo >&2 " ****** The values given are $1 and $2"
 
 virtualenv() {
