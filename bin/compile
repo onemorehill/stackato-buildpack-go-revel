@@ -114,9 +114,12 @@ rm -rf $build/.heroku
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
-echo 'export GOPATH=/app/app/.go' >> $build/.profile.d/go.sh
 
 go get github.com/revel/cmd/revel
+
+# Update GOPATH and GOROOT to reflect change when moved to DEA
+GOPATH=/app/app/.go export GOPATH
+GOROOT=/app/app/.goroot export GOROOT
 
 echo >&2 "++++++++++++++++++ This is the end and this is PATH: $PATH"
 echo >&2 "++++++++++++++++++ And now we are here: " `pwd`
