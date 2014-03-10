@@ -111,3 +111,5 @@ mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
 
 go get github.com/revel/cmd/revel
+
+echo >&2 "++++++++++++++++++ This is the end and this is PATH: $PATH"
