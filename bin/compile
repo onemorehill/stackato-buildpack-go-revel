@@ -98,7 +98,7 @@ then
     godep go get -tags heroku ./...
 else
     echo "-----> Running: go get -tags heroku ./..."
-    go get -tags heroku ./...
+    go get -tags heroku ./... >&2
 fi
 
 mkdir -p $build/bin
