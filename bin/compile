@@ -86,10 +86,11 @@ then
 fi
 
 p=$GOPATH/src/$name
-mkdir -p $p
-cp -R $build/* $p
 
 echo >&2 "************** This is the name: $name and p: $p"
+
+mkdir -p $p
+cp -R $build/* $p
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 cd $p
