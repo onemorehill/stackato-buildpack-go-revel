@@ -90,7 +90,8 @@ p=$GOPATH/src/$name
 echo >&2 "************** This is the name: $name and p: $p"
 
 mkdir -p $p
-find $build/ -type f -not -path '*/go/*' -exec cp '{}' $p/'{}' \;
+cd $build
+find . -type f -not -path '*/go/*' -exec cp '{}' $p/'{}' \;
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 cd $p
