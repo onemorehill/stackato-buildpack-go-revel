@@ -91,7 +91,7 @@ echo >&2 "************** This is the name: $name and p: $p"
 
 mkdir -p $p
 cd $build
-find . -type f -not -path '*/go/*' -exec cp '{}' $p/'{}' \;
+tar --exclude='.go*' -cf - * | ( cd $p ; tar xf - )
 
 unset GIT_DIR # unset git dir or it will mess with goinstall
 cd $p
